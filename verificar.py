@@ -668,10 +668,10 @@ def planilha_pintura(filename, dataInicio, dataFim):
 #data = data_ontem()
 
 dataInicioInnovaro = '01/04/2023'
-dataFimInnovaro = '17/04/2023'
+dataFimInnovaro = '18/04/2023'
 
 dataInicio = '2023-04-01'
-dataFim = '2023-04-17'
+dataFim = '2023-04-18'
 
 nav = acessar_innovaro()
 
@@ -748,36 +748,7 @@ apontamentos_geral['id'] = apontamentos_geral['Recurso'] + " - " + apontamentos_
 
 ids_not_in_df2 = plan_geral[~plan_geral['id'].isin(df['id'])].reset_index(drop=True)
 
-len(ids_not_in_df2) 
+ids_not_in_df2.to_csv("ids_not_in_innovaro.csv")
 
-# for i in range(len(ids_not_in_df2)):
-    
-#     try:
-
-#         if ids_not_in_df2['Máquina'][i] == 'Pintura':
-#             wks_pintura.update('O' + str(ids_not_in_df2['index'][i]+1), '')
-
-#         time.sleep(1)    
-#         if ids_not_in_df2['Máquina'][i] == 'Montagem':
-#             wks_montagem.update('I' + str(ids_not_in_df2['index'][i]+1), '')
-        
-#         time.sleep(1)
-#         if ids_not_in_df2['Máquina'][i] == 'Estamparia':
-#             wks_estamparia.update('N' + str(ids_not_in_df2['index'][i]+1), '')
-        
-#         time.sleep(1)
-#         if ids_not_in_df2['Máquina'][i] == 'Corte':
-#             wks_corte.update('L' + str(ids_not_in_df2['index'][i]+1), '')
-        
-#         time.sleep(1)
-#         if ids_not_in_df2['Máquina'][i] == 'Usinagem':
-#             wks_usinagem.update('J' + str(ids_not_in_df2['index'][i]+1), '')
-        
-#         time.sleep(1)
-#         if ids_not_in_df2['Máquina'][i] == 'Serra':
-#             wks_serra.update('S' + str(ids_not_in_df2['index'][i]+1), '')
-
-#     except:
-#         pass
 
 #nav.close()
